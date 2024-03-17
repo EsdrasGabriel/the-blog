@@ -2,5 +2,4 @@
 </script>
 
 <template>
-  <h1 class="text-5xl text-red-500">Hello World</h1>
 </template>
