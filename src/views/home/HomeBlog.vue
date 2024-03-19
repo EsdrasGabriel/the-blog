@@ -87,14 +87,14 @@ const prevPage = () => {
           titleSize="2xl"
         />
       </div>
-      <div class="flex justify-between w-full text-lg">
+      <div class="flex justify-between w-full text-sm sm:text-lg">
         <button
           class="flex items-center justify-center gap-2 px-2 py-1 rounded text-zinc-600 hover:bg-zinc-200"
           @click="prevPage"
         >
           <ArrowLeft :size="20" />Anterior
         </button>
-        <span class="flex gap-2 text-zinc-600">
+        <span class="flex items-center justify-center gap-2 text-zinc-600">
           Página {{ currentPage }} - {{ maxPage }}
         </span>
         <button

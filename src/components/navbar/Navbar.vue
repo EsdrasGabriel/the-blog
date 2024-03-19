@@ -14,7 +14,10 @@ import { navbarLinksMock } from '@/mocks/navbarLinksMock'
         </HamburgerMenu>
         <ul class="flex items-center justify-center gap-4 text-2xl font-normal max-sm:hidden">
           <li v-for="link in navbarLinksMock" :key="link.id">
-            <RouterLink :to="link.to">{{ link.name }}</RouterLink>
+            <RouterLink :to="link.to">
+              {{ link.name }}
+              <div class="w-full h-1 hover:bg-zinc-900"></div>
+            </RouterLink>
           </li>
         </ul>
       </section>
