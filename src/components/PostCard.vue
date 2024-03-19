@@ -1,40 +1,34 @@
 <script setup lang="ts">
 import { ArrowUpRight } from 'lucide-vue-next'
 
-defineProps({
+const {data, gridDirection, imgHeight, titleSize, visible} = defineProps({
   data: {
     type: Object,
     required: true
   },
-  flexDirection: {
-    type: String
-  },
-  imgHeight: {
-    type: String
-  },
-  imgWidth: {
-    type: String
+  gridDirection: {
+    type: String,
   },
   visible: {
-    type: Boolean
-  },
-  contentWidth: {
-    type: String
+    type: String,
   },
   titleSize: {
-    type: String
+    type: String,
+  },
+  imgHeight: {
+    type: String,
   }
 })
 </script>
 
 <template>
-  <div :class="`flex flex-${flexDirection} gap-5 flex-1`">
+  <div :class="`grid ${gridDirection} gap-5 h-full w-full`">
     <img
       :src="data.img"
       :alt="data.alt"
-      :class="`object-cover rounded-md w-${imgWidth} h-${imgHeight}`"
+      :class="`object-cover rounded-md w-full h-${imgHeight}`"
     />
-    <div :class="`flex flex-col items-start justify-start w-${contentWidth} gap-3 p-2`">
+    <div :class="`flex flex-col items-start justify-start gap-3 p-2 h-fit`">
       <span class="flex items-center justify-center gap-1 text-sm font-semibold text-violet-700"
         >{{ data.createdBy }} <div class="w-1 h-1 rounded bg-violet-700"/> {{ data.createdAt }}</span
       >

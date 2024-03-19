@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import PostCard from '@/components/PostCard.vue'
 import { cardContentMock } from '@/mocks/cardContentMock'
+import { allPostsMock } from '@/mocks/allPostsMock'
 </script>
 
 <template>
@@ -21,47 +22,47 @@ import { cardContentMock } from '@/mocks/cardContentMock'
     >
       <h2 class="text-2xl font-semibold text-zinc-900">Posts recentes no blog</h2>
 
-      <div class="grid w-full grid-cols-2 gap-5">
+      <div class="grid w-full grid-cols-2 gap-5 max-lg:grid-cols-1">
         <PostCard
           :data="cardContentMock[0]"
           :key="cardContentMock[0].id"
           class="row-span-2"
-          flexDirection="col"
+          gridDirection="grid-rows-2"
           titleSize="2xl"
-          imgHeight="56"
-          imgWidth="full"
-        >
-        </PostCard>
+          imgHeight="52"
+        />
         <div class="grid grid-rows-2 gap-5">
           <PostCard
             :data="cardContentMock[1]"
             :key="cardContentMock[1].id"
-            flexDirection="row"
+            gridDirection="grid-rows-1 sm:grid-cols-2"
             titleSize="xl"
             visible="hidden"
-          >
-          </PostCard>
+            imgHeight="52"
+          />
           <PostCard
             :data="cardContentMock[2]"
             :key="cardContentMock[2].id"
-            flexDirection="row"
+            gridDirection="grid-rows-1 sm:grid-cols-2"
             titleSize="56"
             visible="hidden"
-          >
-          </PostCard>
+            imgHeight="52"
+          />
         </div>
         <PostCard
           :data="cardContentMock[3]"
           :key="cardContentMock[3].id"
-          class="col-span-2"
-          flexDirection="row"
+          class="lg:col-span-2"
+          gridDirection="grid-rows-1 lg:grid-cols-2"
           titleSize="2xl"
-          imgWidth="1/2"
-          imgHeight="[16rem]"
-          contentWidth="1/2"
-          
-        >
-        </PostCard>
+          imgHeight="52 lg:h-64 xl:h-52"
+        />
+      </div>
+    </section>
+    <section class="2xl:w-[90rem] w-full my-7 dark:bg-zinc-50 flex flex-col gap-7 items-start max-2xl:px-8">
+      <h3 class="text-2xl font-semibold text-zinc-900">Todas as postagens do blog</h3>
+      <div class="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3">
+        <PostCard v-for="cardValue in allPostsMock" :key="cardValue.id" :data="cardValue" flexDirection="col" imgWidth="full" imgHeight="60"/>
       </div>
     </section>
   </main>

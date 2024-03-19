@@ -65,7 +65,7 @@ export const cardContentMock = [
     img: '/ImageFour.png',
     alt: 'imagem 4',
     title: 'Sistema de grade para melhor design user interface',
-    content: 'Um sistema de grade é uma ferramenta de design usada para organizar o conteúdo em uma página da Web. É uma série de linhas verticais e horizontais que criam uma matriz de pontos de intersecção, que pode ser usada para alinhar e organizar elementos de página. Os sistemas de grade são usados para criar uma aparência consistente em um site e podem ajudar a tornar o layout visualmente mais atraente e mais fácil de navegar.',
+    content: 'Um sistema de grade é uma ferramenta de design usada para organizar o conteúdo em uma página da Web. É uma série de linhas verticais e horizontais que criam uma matriz de pontos de intersecção, que pode ser usada para alinhar e organizar elementos de página.',
     createdBy: 'Olivia Rhye',
     categories: [
       {
